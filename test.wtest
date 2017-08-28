@@ -15,3 +15,18 @@ test "La central carbon 'exBosque' tiene 20 toneladas de capacidad y produce 18.
 test "La central Eolica 'El Suspiro' produce 2 Mkwh en springfield."{
 	assert.equals(2,centralEolica)
 }
+
+test "Dentro de todas las centrales de Springfield, las centrales contaminantes de springfield son una coleccion que tiene la central 'exBosque'"{
+	assert.equals([centralCarbon], springfield.centralesContaminantes())
+}
+test "Si springfield tiene una necesidad de 20 entonces cumplio con su necesidad"{
+	springfield.necesidad(20)
+	assert.that(springfield.cubrioNecesidades(20))
+}
+test "Con las centrales anteriores, Springfield esta en el horno si tiene 30 de necesidad" {
+	springfield.necesidad(30)
+	assert.that(springfield.estaEnElHorno())
+}
+test "Con las centrales anteriores de Springfield, en la region de Springfield y de Alburqueque las centrales mas productoras son 'exBosque' (de springfield) y la central hidroelectrica de Alburqueque "{
+	assert.equals([centralCarbon,centralHidroelectrica], region.centralesConMasProduccion())
+}
