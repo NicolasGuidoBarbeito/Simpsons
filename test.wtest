@@ -1,0 +1,17 @@
+import Simpsons.*
+
+test "La central atomica 'Burns' tiene 10 varillas y produce 1Mkwh en springfield." {
+	centralAtomica.varillas(10)
+	centralAtomica.produccion()
+	assert.equals(1,centralAtomica)
+}
+
+test "La central carbon 'exBosque' tiene 20 toneladas de capacidad y produce 18.5 Mkwh en springfield." {
+	centralCarbon.capacidad(20)
+	centralCarbon.produccion()
+	assert.equals(18.5,centralCarbon)
+}
+
+test "La central Eolica 'El Suspiro' produce 2 Mkwh en springfield."{
+	assert.equals(2,centralEolica)
+}
