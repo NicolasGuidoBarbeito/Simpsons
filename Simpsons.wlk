@@ -1,4 +1,22 @@
-
+object region {
+	const listaDeCiudades = [albuquerque, springfield]
+ method centralesConMasProduccion () {
+  return listaDeCiudades.filter({unaCiudad => unaCiudad.centralConMasProduccion()})
+ }
+}
+object albuquerque {
+	const listaDeCentrales = [centralHidroelectrica]
+	method centralConMasProduccion () {
+	return listaDeCentrales.max({unaCentral => unaCentral.produccion()})
+	}
+}
+object centralHidroelectrica {
+	const rio = 150
+	var produccionTotal
+	method produccion(){
+		produccionTotal = 2 * rio
+	}
+}
 object springfield {
 	const listaDeCentrales = [centralAtomica, centralCarbon, centralEolica]
 	const viento = 10
